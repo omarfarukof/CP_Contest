@@ -3,6 +3,7 @@ import pytest # noqa: F401
 import subprocess
 import os
 import sys
+import time
 import pycpptest
 
 # Get the name of the Python file
@@ -16,7 +17,11 @@ build_problem : str = os.path.join(build_dir,problem)
 testcases = pycpptest.get_test_cases_cph(problem)
 
 def run_problem(input: str  , build_problem=f"{build_problem}")->str:
-    return subprocess.check_output([f"./{build_problem}"], input=input.encode('utf-8')).decode('utf-8')
+    # start_time = time.time()
+    output = subprocess.check_output([f"./{build_problem}"], input=input.encode('utf-8')).decode('utf-8')
+    # end_time = time.time()
+    # print(f"\nTime Taken: {(end_time - start_time)*1000:.2f} ms\n")
+    return output
 def print_run_problem(input: str  , build_problem=f"{build_problem}")->None:
     print(run_problem(input , build_problem))
 
@@ -64,3 +69,13 @@ if __name__ == "__main__":
     pycpptest.compile(problem , build_dir)
     filepath = os.path.join(dirname,filename)
     os.system(f"pytest -s -vv {filepath}")
+
+    testcases = pycpptest.get_test_cases_cph(problem,[])
+    for i in range(len(testcases)):
+        # print(f"\nRunning Test Case: {i+1}")
+        # print(f"Test Case Input: \n{testcases[i][0]}")
+        start_time = time.time()
+        out = subprocess.run([f"./{build_problem}"], input=testcases[i][0].encode('utf-8'), stdout=subprocess.PIPE)
+        end_time = time.time()
+        print(f"Time Taken Case {i+1}: {(end_time - start_time)*1000:.2f} ms\n")
+        # assert out.stdout.decode('utf-8') == case[1]

@@ -2,6 +2,7 @@
 import pytest # noqa: F401
 import subprocess
 import os
+import time
 import pycpptest
 
 # Get the name of the Python file
@@ -51,3 +52,12 @@ if __name__ == "__main__":
     pycpptest.compile(problem , build_dir)
     filepath = os.path.join(dirname,filename)
     os.system(f"pytest -vv {filepath}")
+
+    for i in range(len(testcases)):
+        # print(f"\nRunning Test Case: {i+1}")
+        # print(f"Test Case Input: \n{testcases[i][0]}")
+        start_time = time.time()
+        out = subprocess.run([f"./{build_problem}"], input=testcases[i][0].encode('utf-8'), stdout=subprocess.PIPE)
+        end_time = time.time()
+        print(f"Time Taken [Case {i+1}]: {(end_time - start_time)*1000:.2f} ms\n")
+        # assert out.stdout.decode('utf-8') == case[1]

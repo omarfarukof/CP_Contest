@@ -1,16 +1,13 @@
-#!/usr/bin/env -S uv run
+import numpy as np
 
-import os
-# def get_count(k, l1, r1, l2, r2):
-#     for n in range()
-# write into a text file
-with open("test.txt", "w") as f:
-    for i in range(1,11):
-        for j in range(10):
-            f.write(f"2 1 1 {i} {i+j}\n")
+def mode(a:np.ndarray) -> np.ndarray:
+    values, counts = np.unique(a, return_counts=True)
+    max_count = np.max(counts)
+    m = values[counts == max_count] 
+    return m
 
-    for i in range(1,3):
-        for j in range(10):
-            f.write(f"2 1 2 {i} {i+j}\n")
 
-    f.close()
+if __name__ == "__main__":
+    a = np.array([4,1,5,3,4,5,1])
+    print(type(a))
+    print(mode(a))
