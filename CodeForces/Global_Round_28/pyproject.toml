@@ -1,0 +1,12 @@
+[project]
+name = "global-round-28"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pycpptest",
+]
+
+[tool.uv.sources]
+pycpptest = { git = "https://github.com/omarfarukof/pycpptest" }

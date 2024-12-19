@@ -1,6 +1,12 @@
 version = 1
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "cp-contest",
+    "global-round-28",
+]
+
 [[package]]
 name = "colorama"
 version = "0.4.6"
@@ -26,6 +32,17 @@ requires-dist = [
     { name = "pytest", specifier = ">=8.3.4" },
     { name = "scipy", specifier = ">=1.14.1" },
 ]
+
+[[package]]
+name = "global-round-28"
+version = "0.1.0"
+source = { virtual = "CodeForces/Global_Round_28" }
+dependencies = [
+    { name = "pycpptest" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pycpptest", git = "https://github.com/omarfarukof/pycpptest" }]
 
 [[package]]
 name = "iniconfig"
@@ -91,6 +108,11 @@ sdist = { url = "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a
 wheels = [
     { url = "https://files.pythonhosted.org/packages/88/5f/e351af9a41f866ac3f1fac4ca0613908d9a41741cfcf2228f4ad853b697d/pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669", size = 20556 },
 ]
+
+[[package]]
+name = "pycpptest"
+version = "0.3.0"
+source = { git = "https://github.com/omarfarukof/pycpptest#793c3ae618f2dda86dedae4dd1dca2390d9ef0f2" }
 
 [[package]]
 name = "pytest"
