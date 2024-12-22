@@ -1,18 +1,12 @@
 [project]
-name = "cp-contest"
+name = "round-995-div-3"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "numpy>=2.2.0",
     "pycpptest",
-    "pytest>=8.3.4",
-    "scipy>=1.14.1",
 ]
-
-[tool.uv.workspace]
-members = ["CodeForces/Global_Round_28", "CodeForces/Round_994_Div_2", "CodeForces/Round_995_Div_3"]
 
 [tool.uv.sources]
 pycpptest = { git = "https://github.com/omarfarukof/pycpptest" }
