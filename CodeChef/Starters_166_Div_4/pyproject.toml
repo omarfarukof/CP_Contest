@@ -1,0 +1,7 @@
+[project]
+name = "starters-166-div-4"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
