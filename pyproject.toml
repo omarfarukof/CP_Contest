@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [tool.uv.workspace]
-members = ["CodeForces/Global_Round_28", "CodeForces/Round_994_Div_2", "CodeForces/Round_995_Div_3"]
+members = ["CodeForces/Global_Round_28", "CodeForces/Round_994_Div_2", "CodeForces/Round_995_Div_3", "CodeForces/Hello_2025"]
 
 [tool.uv.sources]
 pycpptest = { git = "https://github.com/omarfarukof/pycpptest" }
